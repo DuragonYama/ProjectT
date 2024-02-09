@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project teyze</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="BOX" id="BOX">
+        <div class="Wcontainer">
+            <div class="werk" id="werk">
+                <h1>NAAM</h1>
+                <p id="p1"></p>
+                <div class="image" id="imageContainer"></div>
+            </div>
+            <div class="werk" id="werk">
+                <h1>NAAM</h1>
+                <p id="p1"></p>
+                <div class="image" id="imageContainer"></div>
+            </div>
+            <div class="werk" id="werk">
+                <h1>NAAM</h1>
+                <p id="p1"></p>
+                <div class="image" id="imageContainer"></div>
+            </div>
+            <div class="werk" id="werk">
+                <h1>NAAM</h1>
+                <p id="p1"></p>
+                <div class="image" id="imageContainer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="kg1">BOX edit</button>
+        <button id="kg2">TEXT edit</button>
+        <button id="kg3">AFB edit</button>
+    </div>
+    <div class="container">
+        <button id="ss">Download</button>
+        <button id="arti">+</button>
+        <button id="eksi">-</button>
+        <input type="file" id="imageInput" accept="image/*">
+        <input type="file" id="imageInput2" accept="image/*"> <button id="afbV">afb verwijderen</button>
+    </div>
+    <div class="containing">
+        <div class="ok" id="ok1">
+            <h2>ALLES</h2>
+            <input type="text" id="width" placeholder="150"> - breedte<br>
+            <input type="text" id="height" placeholder="300"> - hoogte<br>
+            <input type="color" id="color" value="#FFFFFF"> - achtergrond kleur <br>
+            <input type="color" id="borderColor"> - border kleur <br><br>
+            <button id="knop">SAVE</button>
+        </div>
+        <div class="ok" id="ok2">
+            <h2>tekst</h2>
+            <input type="text" id="title" placeholder="titel"> - titel inhoud <br>
+            <input type="text" id="fSize" placeholder="28"> - titel grootte <br>
+            <input type="text" id="inhoudp1Size" placeholder="12"> - tekst grootte <br>
+            <textarea id="inhoudp1" placeholder="tekst"></textarea> <br>
+            <input type="text" id="pValue" placeholder="60"> - laagte <br>
+            <input type="color" id="textColor"> - titel kleur<br>
+            <input type="color" id="p1Color"> - tekst kleur<br><br>
+            <button id="knop2">SAVE</button>
+        </div>
+        <div class="ok" id="ok3">
+            <h2>Afbeelding edit</h2>
+            <input type="text" id="iBreedte" placeholder="150"> - breedte <br>
+            <input type="text" id="iHoogte" placeholder="150"> - hoogte <br>
+            <input type="text" id="top-bottom" placeholder="0"> - omhoog <br>
+            <input type="text" id="bottom-top" placeholder="60"> - omlaag <br>
+            <input type="text" id="right-left" placeholder="0"> - rechts <br>
+            <input type="text" id="left-right" placeholder="0"> - lings    
+            <br><br>
+            <button id="knop3">SAVE</button>
+        </div>
+    </div>
+    <div id="canvas"></div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="test.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="YUH.css">
+</head>
+<body>
+    <div class="BOX" id="BOX">
+        <div class="werk" id="werk">
+            <h1>NAAM</h1>
+            <p id="p1"></p>
+        </div>
+        <div class="werk" id="werk">
+            <h1>NAAM</h1>
+            <p id="p1"></p>
+        </div>
+        <div class="werk" id="werk">
+            <h1>NAAM</h1>
+            <p id="p1"></p>
+        </div>
+    </div>
+    <div class="container">
+        <button id="ss">Download</button>
+        <button id="arti">+</button>
+        <button id="eksi">-</button>
+        <input type="file" id="imageInput" accept="image/*">
+    </div>
+    <div class="containing">
+        <div class="okbozo">
+            <h2>box</h2>
+            <input type="text" id="width" placeholder="250"> - breedte<br>
+            <input type="text" id="height" placeholder="500"> - hoogte<br>
+            <input type="color" id="color" value="#FFFFFF"> - achtergrond kleur <br>
+            <input type="color" id="borderColor"> - border kleur <br>
+            <input type="color" id="textColor"> - text kleur<br><br>
+            <button id="knop">SAVE</button>
+        </div>
+        <div class="okbozo" id="okbozo2">
+            <h2>tekst</h2>
+            <input type="text" id="title" placeholder="titel"> - titel inhoud <br>
+            <input type="text" id="fSize" placeholder="32"> - titel grootte <br>
+            <textarea id="inhoudp1" placeholder="blok1"></textarea> - tekst <br>
+            <input type="text" id="inhoudp1Size" placeholder="16"> - tekst grootte <br>
+            <input type="color" id="p1Color"> - tekst kleur
+            <br><br>
+            <button id="knop2">SAVE</button>
+        </div>
+    </div>
+    <div id="canvas"></div>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="YUH.js"></script>
+</body>
+</html>
