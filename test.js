@@ -1,6 +1,7 @@
 const knop = document.getElementById("knop");
 const knop2 = document.getElementById("knop2");
 const knop3 = document.getElementById("knop3");
+const knop4 = document.getElementById("knop4");
 const ss = document.getElementById("ss");
 const arti = document.getElementById("arti");
 const eksi = document.getElementById("eksi");
@@ -87,6 +88,18 @@ knop3.onclick = function () {
     });
 };
 
+knop4.onclick = function () {
+    let naam1 = document.querySelector("#naam1").value;
+    let naam2 = document.querySelector("#naam2").value;
+    let naam3 = document.querySelector("#naam3").value;
+    let naam4 = document.querySelector("#naam4").value;
+
+    document.querySelector("#voorNaam1").innerText = naam1;
+    document.querySelector("#voorNaam2").innerText = naam2;
+    document.querySelector("#voorNaam3").innerText = naam3;
+    document.querySelector("#voorNaam4").innerText = naam4;
+};
+
 ss.onclick = function () {
     html2canvas(document.querySelector(".werk")).then(canvas => {
         const blobURL = canvas.toDataURL();
@@ -121,27 +134,39 @@ afbV.onclick = function () {
 const kg1 = document.getElementById("kg1");
 const kg2 = document.getElementById("kg2");
 const kg3 = document.getElementById("kg3");
+const kg4 = document.getElementById("kg4");
 
 const ok1 = document.getElementById("ok1");
 const ok2 = document.getElementById("ok2");
 const ok3 = document.getElementById("ok3");
+const ok4 = document.getElementById("ok4");
 
 kg1.addEventListener("click", function() {
     ok1.style.display = "block";
     ok2.style.display = "none";
     ok3.style.display = "none";
+    ok4.style.display = "none";
 });
 
 kg2.addEventListener("click", function() {
     ok1.style.display = "none";
     ok2.style.display = "block";
     ok3.style.display = "none";
+    ok4.style.display = "none";
 });
 
 kg3.addEventListener("click", function() {
     ok1.style.display = "none";
     ok2.style.display = "none";
     ok3.style.display = "block";
+    ok4.style.display = "none";
+});
+
+kg4.addEventListener("click", function() {
+    ok1.style.display = "none";
+    ok2.style.display = "none";
+    ok3.style.display = "none";
+    ok4.style.display = "block";
 });
 
 //niet mijn code

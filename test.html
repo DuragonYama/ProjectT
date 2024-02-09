@@ -10,22 +10,22 @@
     <div class="BOX" id="BOX">
         <div class="Wcontainer">
             <div class="werk" id="werk">
-                <h1>NAAM</h1>
+                <h1 id="voorNaam1">NAAM</h1>
                 <p id="p1"></p>
                 <div class="image" id="imageContainer"></div>
             </div>
             <div class="werk" id="werk">
-                <h1>NAAM</h1>
+                <h1 id="voorNaam2">NAAM</h1>
                 <p id="p1"></p>
                 <div class="image" id="imageContainer"></div>
             </div>
             <div class="werk" id="werk">
-                <h1>NAAM</h1>
+                <h1 id="voorNaam3">NAAM</h1>
                 <p id="p1"></p>
                 <div class="image" id="imageContainer"></div>
             </div>
             <div class="werk" id="werk">
-                <h1>NAAM</h1>
+                <h1 id="voorNaam4">NAAM</h1>
                 <p id="p1"></p>
                 <div class="image" id="imageContainer"></div>
             </div>
@@ -35,17 +35,27 @@
         <button id="kg1">BOX edit</button>
         <button id="kg2">TEXT edit</button>
         <button id="kg3">AFB edit</button>
+        <button id="kg4">TITEL edit</button>
     </div>
     <div class="container">
-        <button id="ss">Download</button>
-        <button id="arti">+</button>
-        <button id="eksi">-</button>
-        <input type="file" id="imageInput" accept="image/*">
-        <input type="file" id="imageInput2" accept="image/*"> <button id="afbV">afb verwijderen</button>
+        <h5>Deze knop kan gebruikt worden om <br> bij elke box een afbeelding toe te voegen</h5>
+        <div>
+            <input type="file" id="imageInput2" accept="image/*">
+        </div>
+        <button id="afbV">afb verwijderen</button>
+        <h5>Met dit knop kan je waar je wilt een afbeelding neer zetten,<br> <span style="color: red">double klikken op een afbeelding om het te kunnen verwijderen</span></h5>
+        <div>
+            <input type="file" id="imageInput" accept="image/*">
+        </div>
+        <!-- <div>
+            <button id="ss">Download</button>
+            <button id="arti">+</button>
+            <button id="eksi">-</button>
+        </div> -->
     </div>
     <div class="containing">
         <div class="ok" id="ok1">
-            <h2>ALLES</h2>
+            <h2>BOX edit</h2>
             <input type="text" id="width" placeholder="150"> - breedte<br>
             <input type="text" id="height" placeholder="300"> - hoogte<br>
             <input type="color" id="color" value="#FFFFFF"> - achtergrond kleur <br>
@@ -54,7 +64,6 @@
         </div>
         <div class="ok" id="ok2">
             <h2>tekst</h2>
-            <input type="text" id="title" placeholder="titel"> - titel inhoud <br>
             <input type="text" id="fSize" placeholder="28"> - titel grootte <br>
             <input type="text" id="inhoudp1Size" placeholder="12"> - tekst grootte <br>
             <textarea id="inhoudp1" placeholder="tekst"></textarea> <br>
@@ -73,6 +82,15 @@
             <input type="text" id="left-right" placeholder="0"> - lings    
             <br><br>
             <button id="knop3">SAVE</button>
+        </div>
+        <div class="ok" id="ok4">
+            <h2>Titel/Naam edit</h2>
+            <input type="text" id="naam1" placeholder="titel box1"> - titel voor box1 <br>
+            <input type="text" id="naam2" placeholder="titel box2"> - titel voor box2<br>
+            <input type="text" id="naam3" placeholder="titel box3"> - titel voor box3<br>
+            <input type="text" id="naam4" placeholder="titel box4"> - titel voor box4
+            <br><br>
+            <button id="knop4">SAVE</button>
         </div>
     </div>
     <div id="canvas"></div>

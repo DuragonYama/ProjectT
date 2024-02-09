@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 10;
 }
 #werk {
     border: 3px solid black;
@@ -28,35 +29,15 @@ h1 {
     transition: color 0.5s ease;
     font-size: 28px;
 }
-#ss, #arti, #eksi {
-    position: relative;
-    top: 50px;
-}
 .BOX {
     /* display: flex; */
     position: relative;
     width: 1255px;
     /* border: solid red; */
 }
-#canvas {
-    position: relative;
-    /* width: 250px;
-    height: 250px; */
-    /* border: 2px solid #ccc; */
-}
-
 .draggable {
     position: absolute;
     cursor: grab;
-}
-#imageInput, #imageInput2 {
-    position: relative;
-    top: 20px;
-    right: 130px;
-}
-#imageInput2 {
-    top: 0px;
-    right: 387px;
 }
 #ok1 {
     display: block;
@@ -73,6 +54,16 @@ h1 {
 .container {
     position: absolute;
     top: 550px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: 98%;
+    /* border: solid red; */
+}
+.container > * {
+    margin: 0px;
+    padding: 0px;
 }
 #fSize, #title, #tekst, #inhoudp1Size, #iBreedte, #iHoogte, #pValue {
     width: 70px;
@@ -110,8 +101,7 @@ h1 {
     top: 300px;
 }
 #afbV {
-    position: absolute;
-    right: 270px;
+    height: 20px;
 }
 .button-container {
     top: 350px;
