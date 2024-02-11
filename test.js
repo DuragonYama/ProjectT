@@ -100,15 +100,15 @@ knop4.onclick = function () {
     document.querySelector("#voorNaam4").innerText = naam4;
 };
 
-ss.onclick = function () {
-    html2canvas(document.querySelector(".werk")).then(canvas => {
-        const blobURL = canvas.toDataURL();
-        const downloadLink = document.createElement("a");
-        downloadLink.href = blobURL;
-        downloadLink.download = "screenshot.png";
-        downloadLink.click();
-    });
-};
+// ss.onclick = function () {
+//     html2canvas(document.querySelector(".werk")).then(canvas => {
+//         const blobURL = canvas.toDataURL();
+//         const downloadLink = document.createElement("a");
+//         downloadLink.href = blobURL;
+//         downloadLink.download = "screenshot.png";
+//         downloadLink.click();
+//     });
+// };
 
 document.getElementById("imageInput2").addEventListener("change", function() {
     const reader = new FileReader();
