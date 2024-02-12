@@ -37,7 +37,11 @@ knop2.onclick = function () {
     // let titel = document.getElementById("title").value;
     let textKleur = document.getElementById("textColor").value;
     let pValue = document.getElementById("pValue").value;
+    let fontSelector = document.getElementById("fontChoser").value;
 
+    document.querySelectorAll("#werk").forEach(function(e) {
+        e.style.fontFamily = fontSelector;
+    });
     document.querySelectorAll("#p1").forEach(function(e) {
         e.style.color = p1Color;
     });
