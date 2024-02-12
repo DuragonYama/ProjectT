@@ -198,8 +198,6 @@ function saveData(key) {
         naam2: document.querySelector("#naam2").value,
         naam3: document.querySelector("#naam3").value,
         naam4: document.querySelector("#naam4").value
-        
-
     };
     localStorage.setItem(key, JSON.stringify(dataToSave));
 };
@@ -224,7 +222,7 @@ function loadData(key) {
         document.getElementById("naam2").value = savedData.naam2;
         document.getElementById("naam3").value = savedData.naam3;
         document.getElementById("naam4").value = savedData.naam4;
-    }
+    };
 };
 
 document.getElementById("saveButton").addEventListener("click", function() {
