@@ -177,7 +177,29 @@ kg4.addEventListener("click", function() {
 
 function saveData(key) {
     const dataToSave = {
-        boxWidth: document.getElementById("width").value
+        boxWidth: document.getElementById("width").value,
+        boxHeight: document.getElementById("height").value,
+        backgroundC: document.getElementById("color").value,
+        borderC: document.getElementById("borderColor").value,
+        tekstC: document.getElementById("p1Color").value,
+        tekstInhoud: document.getElementById("inhoudp1").value,
+        fSize: document.getElementById("fSize").value,
+        inhoudp1Size: document.getElementById("inhoudp1Size").value,
+        textColor: document.getElementById("textColor").value,
+        pValue: document.getElementById("pValue").value,
+        fontChoser: document.getElementById("fontChoser").value,
+        iBreedte: document.querySelector("#iBreedte").value,
+        iHoogte: document.querySelector("#iHoogte").value,
+        topBottom: document.querySelector("#top-bottom").value,
+        bottomTop: document.querySelector("#bottom-top").value,
+        rightLeft: document.querySelector("#right-left").value,
+        leftRight: document.querySelector("#left-right").value,
+        naam1: document.querySelector("#naam1").value,
+        naam2: document.querySelector("#naam2").value,
+        naam3: document.querySelector("#naam3").value,
+        naam4: document.querySelector("#naam4").value
+        
+
     };
     localStorage.setItem(key, JSON.stringify(dataToSave));
 };
@@ -186,7 +208,22 @@ function loadData(key) {
     const savedData = JSON.parse(localStorage.getItem(key));
     if(savedData) {
         document.getElementById("width").value = savedData.boxWidth;
-        console.log(saveData.boxWidth);
+        document.getElementById("height").value = savedData.boxHeight;
+        document.getElementById("color").value = savedData.backgroundC;
+        document.getElementById("borderColor").value = savedData.borderC;
+        document.getElementById("p1Color").value = savedData.tekstC;
+        document.getElementById("inhoudp1").value = savedData.tekstInhoud;
+        document.getElementById("fSize").value = savedData.fSize;
+        document.getElementById("inhoudp1Size").value = savedData.inhoudp1Size;
+        document.getElementById("textColor").value = savedData.textColor;
+        document.getElementById("pValue").value = savedData.pValue;
+        document.getElementById("fontChoser").value = savedData.fontChoser;
+        document.querySelector("#iBreedte").value = savedData.iBreedte;
+        document.querySelector("#iHoogte").value = savedData.iHoogte;
+        document.getElementById("naam1").value = savedData.naam1;
+        document.getElementById("naam2").value = savedData.naam2;
+        document.getElementById("naam3").value = savedData.naam3;
+        document.getElementById("naam4").value = savedData.naam4;
     }
 };
 
@@ -231,7 +268,7 @@ function displaySavedKeys() {
     });
     document.getElementById("stop").style.display = "block";
 
-    document.getElementById("stop").addEventListener("click", function (e) {
+    document.getElementById("stop").addEventListener("click", function () {
         listContainer.innerHTML = "";
         document.getElementById("stop").style.display = "none";
     });
