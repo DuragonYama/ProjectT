@@ -188,7 +188,7 @@ function loadData(key) {
         document.getElementById("width").value = savedData.boxWidth;
         console.log(saveData.boxWidth);
     }
-}
+};
 
 document.getElementById("saveButton").addEventListener("click", function() {
     const saveKey = prompt("Geef een naam aan dit ontwerp om te kunnen opslaan");
@@ -203,8 +203,50 @@ document.getElementById("loadButton").addEventListener("click", function() {
     if(loadKey) {
         loadData(loadKey);
         alert("Je werk is geopend!");
+        document.getElementById("knop").click();
+        document.getElementById("knop2").click();
+        document.getElementById("knop3").click();
+        document.getElementById("knop4").click();
     }
 });
+
+function getSavedKey() {
+    const keys = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        keys.push(localStorage.key(i));
+    }
+    return keys;
+};
+
+function displaySavedKeys() {
+    const savedKeys = getSavedKey();
+    const listContainer = document.getElementById("savedKeyL");
+
+    listContainer.innerHTML = "";
+
+    savedKeys.forEach(function(e) {
+        const listItem = document.createElement("li");
+        listItem.textContent = e;
+        listContainer.appendChild(listItem);
+    });
+    document.getElementById("stop").style.display = "block";
+
+    document.getElementById("stop").addEventListener("click", function (e) {
+        listContainer.innerHTML = "";
+        document.getElementById("stop").style.display = "none";
+    });
+};
+
+function hakai() {
+    const hakaii = prompt("Wat wil je verwijderen? voer het naam in.");
+
+    if(hakaii) {
+        localStorage.removeItem(hakaii);
+        alert("Je werk " + hakaii + " is verwijdert");
+    } else {
+        alert("Dit bestaat niet!");
+    }
+};
 //niet mijn code
 document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('canvas');
