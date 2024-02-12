@@ -173,6 +173,38 @@ kg4.addEventListener("click", function() {
     ok4.style.display = "block";
 });
 
+//save
+
+function saveData(key) {
+    const dataToSave = {
+        boxWidth: document.getElementById("width").value
+    };
+    localStorage.setItem(key, JSON.stringify(dataToSave));
+};
+
+function loadData(key) {
+    const savedData = JSON.parse(localStorage.getItem(key));
+    if(savedData) {
+        document.getElementById("width").value = savedData.boxWidth;
+        console.log(saveData.boxWidth);
+    }
+}
+
+document.getElementById("saveButton").addEventListener("click", function() {
+    const saveKey = prompt("Geef een naam aan dit ontwerp om te kunnen opslaan");
+    if (saveKey) {
+        saveData(saveKey);
+        alert("Data is opgeslagen");
+    }
+});
+
+document.getElementById("loadButton").addEventListener("click", function() {
+    const loadKey = prompt("Geef aan het naam van je werk dat je wilt openen");
+    if(loadKey) {
+        loadData(loadKey);
+        alert("Je werk is geopend!");
+    }
+});
 //niet mijn code
 document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('canvas');
