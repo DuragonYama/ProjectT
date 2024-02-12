@@ -28,7 +28,7 @@ knop.onclick = function () {
         e.style.border = borderColor + " solid 3px";
     })
 };
-//Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae labore perferendis dolore in placeat id quam a, fugit corrupti expedita provident distinctio! Ut vitae praesentium fugiat quae magni, iusto consequatur.
+
 knop2.onclick = function () {
     let p1Color = document.getElementById("p1Color").value;
     let inhoudp1 = document.getElementById("inhoudp1").value;
