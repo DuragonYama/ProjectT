@@ -282,6 +282,29 @@ function hakai() {
         alert("Dit bestaat niet!");
     }
 };
+
+document.getElementById("fontUploadInput").addEventListener("change", fontChange);
+
+function fontChange(e) {
+    const fontFile = e.target.files[0];
+
+    if (fontFile) {
+        const fontFileURL = URL.createObjectURL(fontFile);
+        const fontFace = new FontFace('CustomFont', `url('${fontFileURL}')`);
+
+        fontFace.load().then(function(loadedFont) {
+            document.fonts.add(loadedFont);
+            setInterval(() => {
+                document.querySelectorAll("#werk").forEach(function(e) {
+                    e.style.fontFamily = "CustomFont, Arial, sans-serif";
+                });
+            }, 1000);
+        }).catch(function(error) {
+            console.error('Font loading failed: ', error);
+        });
+    }
+}
+
 //niet mijn code
 document.addEventListener('DOMContentLoaded', function () {
     const canvas = document.getElementById('canvas');
