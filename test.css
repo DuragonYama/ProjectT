@@ -126,16 +126,3 @@ h1 {
     color: white;
     border: 1px solid black;
 }
-.versie1 {
-    /* display: none; */
-}
-.versionChooser {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    display: none;
-}
-#v1Choser, #v2Choser {
-    height: 100vh;
-    width: 50%;
-}

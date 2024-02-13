@@ -1,4 +1,3 @@
-//versie 1
 const knop = document.getElementById("knop");
 const knop2 = document.getElementById("knop2");
 const knop3 = document.getElementById("knop3");
@@ -402,5 +401,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
-//versie 2
