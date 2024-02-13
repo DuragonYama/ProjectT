@@ -117,6 +117,9 @@ h1 {
     position: absolute;
     left: 1260px;
 }
+.list {
+    margin-left: 5px;
+}
 #stop {
     display: none;
     background-color: red;
