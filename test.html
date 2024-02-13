@@ -7,161 +7,167 @@
     <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <div class="BOX" id="BOX">
-        <div class="Wcontainer">
-            <div class="werk" id="werk">
-                <h1 id="voorNaam1">NAAM</h1>
-                <p id="p1"></p>
-                <div class="image" id="imageContainer"></div>
+    <div class="versionChooser">
+        <button id="v1Choser">VERSIE1 (KLIK MIJ!!!!)</button>
+        <button id="v2Choser">VERSIE2 IN DEVELOPMENT</button>
+    </div>
+    <div class="versie1">
+        <div class="BOX" id="BOX">
+            <div class="Wcontainer">
+                <div class="werk" id="werk">
+                    <h1 id="voorNaam1">NAAM</h1>
+                    <p id="p1"></p>
+                    <div class="image" id="imageContainer"></div>
+                </div>
+                <div class="werk" id="werk">
+                    <h1 id="voorNaam2">NAAM</h1>
+                    <p id="p1"></p>
+                    <div class="image" id="imageContainer"></div>
+                </div>
+                <div class="werk" id="werk">
+                    <h1 id="voorNaam3">NAAM</h1>
+                    <p id="p1"></p>
+                    <div class="image" id="imageContainer"></div>
+                </div>
+                <div class="werk" id="werk">
+                    <h1 id="voorNaam4">NAAM</h1>
+                    <p id="p1"></p>
+                    <div class="image" id="imageContainer"></div>
+                </div>
             </div>
-            <div class="werk" id="werk">
-                <h1 id="voorNaam2">NAAM</h1>
-                <p id="p1"></p>
-                <div class="image" id="imageContainer"></div>
+        </div>
+        <div class="button-container">
+            <button id="kg1">BOX edit</button>
+            <button id="kg2">TEXT edit</button>
+            <button id="kg3">AFB edit</button>
+            <button id="kg4">TITEL edit</button> <br> <br>
+            <button id="saveButton">Save</button>
+            <button id="loadButton">Load</button> <br>
+            <button id="data" onclick="displaySavedKeys()">Save data</button> 
+            <button onclick="hakai()">Delete Save</button>
+        </div>
+        <div class="list">
+            <button id="stop">x</button>
+            <ul id="savedKeyL"></ul>
+        </div>
+        <div class="container">
+            <h5>Deze knop kan gebruikt worden om <br> bij elke box een afbeelding toe te voegen</h5>
+            <div>
+                <input type="file" id="imageInput2" accept="image/*">
             </div>
-            <div class="werk" id="werk">
-                <h1 id="voorNaam3">NAAM</h1>
-                <p id="p1"></p>
-                <div class="image" id="imageContainer"></div>
+            <button id="afbV">afb verwijderen</button>
+            <h5>Met dit knop kan je waar je wilt <br> een afbeelding neer zetten,<br> <span style="color: red">double klikken op een afbeelding om <br>het te kunnen verwijderen</span></h5>
+            <div>
+                <input type="file" id="imageInput" accept="image/*">
             </div>
-            <div class="werk" id="werk">
-                <h1 id="voorNaam4">NAAM</h1>
-                <p id="p1"></p>
-                <div class="image" id="imageContainer"></div>
+            <!-- <div>
+                <button id="ss">Download</button>
+                <button id="arti">+</button>
+                <button id="eksi">-</button>
+            </div> -->
+        </div>
+        <div class="containing">
+            <div class="ok" id="ok1">
+                <h2>BOX edit</h2>
+                <input type="text" id="width" placeholder="150"> - breedte<br>
+                <input type="text" id="height" placeholder="300"> - hoogte<br>
+                <input type="color" id="color" value="#FFFFFF"> - achtergrond kleur <br>
+                <input type="color" id="borderColor"> - border kleur <br><br>
+                <button id="knop">SAVE</button>
+            </div>
+            <div class="ok" id="ok2">
+                <h2>tekst</h2>
+                <input type="text" id="fSize" placeholder="28"> - titel grootte <br>
+                <input type="text" id="inhoudp1Size" placeholder="12"> - tekst grootte <br>
+                <textarea id="inhoudp1" placeholder="tekst"></textarea> <br>
+                <input type="text" id="pValue" placeholder="60"> - laagte <br>
+                <input type="color" id="textColor"> - titel kleur<br>
+                <input type="color" id="p1Color"> - tekst kleur<br>
+                <select name="fontChoser" id="fontChoser">
+                    <option value="">Kies een font</option>
+                    <option value="Times New Roman">Times New Roman</option>            
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="Bahnschrift">Bahnschrift</option>
+                    <option value="Calibri">Calibri</option>
+                    <option value="Cambria">Cambria</option>
+                    <option value="Cambria Math">Cambria Math</option>
+                    <option value="Candara">Candara</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Consolas">Consolas</option>
+                    <option value="Constantia">Constantia</option>
+                    <option value="Corbel">Corbel</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Ebrima">Ebrima</option>
+                    <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                    <option value="Gabriola">Gabriola</option>
+                    <option value="Gadugi">Gadugi</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Ink Free">Ink Free</option>
+                    <option value="Javanese Text">Javanese Text</option>
+                    <option value="Leelawadee UI">Leelawadee UI</option>
+                    <option value="Lucida Console">Lucida Console</option>
+                    <option value="Malgun Gothic">Malgun Gothic</option>
+                    <option value="Microsoft Himalaya">Microsoft Himalaya</option>
+                    <option value="Microsoft JhengHei">Microsoft JhengHei</option>
+                    <option value="Microsoft New Tai Lue">Microsoft New Tai Lue</option>
+                    <option value="Microsoft PhagsPa">Microsoft PhagsPa</option>
+                    <option value="Microsoft Sans Serif">Microsoft Sans Serif</option>
+                    <option value="Microsoft Tai Le">Microsoft Tai Le</option>
+                    <option value="Microsoft YaHei">Microsoft YaHei</option>
+                    <option value="Microsoft Yi Baiti">Microsoft Yi Baiti</option>
+                    <option value="Mongolian Baiti">Mongolian Baiti</option>
+                    <option value="MV Boli">MV Boli</option>
+                    <option value="Myanmar Text">Myanmar Text</option>
+                    <option value="Nirmala UI">Nirmala UI</option>
+                    <option value="Palatino Linotype">Palatino Linotype</option>
+                    <option value="Segoe Print">Segoe Print</option>
+                    <option value="Segoe Script">Segoe Script</option>
+                    <option value="Segoe UI">Segoe UI</option>
+                    <option value="Segoe UI Historic">Segoe UI Historic</option>
+                    <option value="Segoe UI Emoji">Segoe UI Emoji</option>
+                    <option value="Segoe UI Symbol">Segoe UI Symbol</option>
+                    <option value="SimSun">SimSun</option>
+                    <option value="Sitka">Sitka</option>
+                    <option value="Sylfaen">Sylfaen</option>
+                    <option value="Symbol">Symbol</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Trebuchet MS">Trebuchet MS</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Webdings">Webdings</option>
+                    <option value="Wingdings">Wingdings</option>
+                    <option value="Yu Gothic">Yu Gothic</option>
+                    <option value="Yu Gothic UI">Yu Gothic UI</option>
+                    <option value="Yu Mincho">Yu Mincho</option>
+                </select> <br>
+                <input type="file" id="fontUploadInput" accept=".ttf,.otf">
+                <br><br>
+                <button id="knop2">SAVE</button>
+            </div>
+            <div class="ok" id="ok3">
+                <h2>Afbeelding edit</h2>
+                <input type="text" id="iBreedte" placeholder="150"> - breedte <br>
+                <input type="text" id="iHoogte" placeholder="150"> - hoogte <br>
+                <input type="text" id="top-bottom" placeholder="0"> - omhoog <br>
+                <input type="text" id="bottom-top" placeholder="60"> - omlaag <br>
+                <input type="text" id="right-left" placeholder="0"> - rechts <br>
+                <input type="text" id="left-right" placeholder="0"> - lings    
+                <br><br>
+                <button id="knop3">SAVE</button>
+            </div>
+            <div class="ok" id="ok4">
+                <h2>Titel/Naam edit</h2>
+                <input type="text" id="naam1" placeholder="titel box1"> - titel voor box1 <br>
+                <input type="text" id="naam2" placeholder="titel box2"> - titel voor box2<br>
+                <input type="text" id="naam3" placeholder="titel box3"> - titel voor box3<br>
+                <input type="text" id="naam4" placeholder="titel box4"> - titel voor box4
+                <br><br>
+                <button id="knop4">SAVE</button>
             </div>
         </div>
+        <div id="canvas"></div>
     </div>
-    <div class="button-container">
-        <button id="kg1">BOX edit</button>
-        <button id="kg2">TEXT edit</button>
-        <button id="kg3">AFB edit</button>
-        <button id="kg4">TITEL edit</button> <br> <br>
-        <button id="saveButton">Save</button>
-        <button id="loadButton">Load</button> <br>
-        <button id="data" onclick="displaySavedKeys()">Save data</button> 
-        <button onclick="hakai()">Delete Save</button>
-    </div>
-    <div class="list">
-        <button id="stop">x</button>
-        <ul id="savedKeyL"></ul>
-    </div>
-    <div class="container">
-        <h5>Deze knop kan gebruikt worden om <br> bij elke box een afbeelding toe te voegen</h5>
-        <div>
-            <input type="file" id="imageInput2" accept="image/*">
-        </div>
-        <button id="afbV">afb verwijderen</button>
-        <h5>Met dit knop kan je waar je wilt <br> een afbeelding neer zetten,<br> <span style="color: red">double klikken op een afbeelding om <br>het te kunnen verwijderen</span></h5>
-        <div>
-            <input type="file" id="imageInput" accept="image/*">
-        </div>
-        <!-- <div>
-            <button id="ss">Download</button>
-            <button id="arti">+</button>
-            <button id="eksi">-</button>
-        </div> -->
-    </div>
-    <div class="containing">
-        <div class="ok" id="ok1">
-            <h2>BOX edit</h2>
-            <input type="text" id="width" placeholder="150"> - breedte<br>
-            <input type="text" id="height" placeholder="300"> - hoogte<br>
-            <input type="color" id="color" value="#FFFFFF"> - achtergrond kleur <br>
-            <input type="color" id="borderColor"> - border kleur <br><br>
-            <button id="knop">SAVE</button>
-        </div>
-        <div class="ok" id="ok2">
-            <h2>tekst</h2>
-            <input type="text" id="fSize" placeholder="28"> - titel grootte <br>
-            <input type="text" id="inhoudp1Size" placeholder="12"> - tekst grootte <br>
-            <textarea id="inhoudp1" placeholder="tekst"></textarea> <br>
-            <input type="text" id="pValue" placeholder="60"> - laagte <br>
-            <input type="color" id="textColor"> - titel kleur<br>
-            <input type="color" id="p1Color"> - tekst kleur<br>
-            <select name="fontChoser" id="fontChoser">
-                <option value="">Kies een font</option>
-                <option value="Times New Roman">Times New Roman</option>            
-                <option value="Arial">Arial</option>
-                <option value="Arial Black">Arial Black</option>
-                <option value="Bahnschrift">Bahnschrift</option>
-                <option value="Calibri">Calibri</option>
-                <option value="Cambria">Cambria</option>
-                <option value="Cambria Math">Cambria Math</option>
-                <option value="Candara">Candara</option>
-                <option value="Comic Sans MS">Comic Sans MS</option>
-                <option value="Consolas">Consolas</option>
-                <option value="Constantia">Constantia</option>
-                <option value="Corbel">Corbel</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Ebrima">Ebrima</option>
-                <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
-                <option value="Gabriola">Gabriola</option>
-                <option value="Gadugi">Gadugi</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Impact">Impact</option>
-                <option value="Ink Free">Ink Free</option>
-                <option value="Javanese Text">Javanese Text</option>
-                <option value="Leelawadee UI">Leelawadee UI</option>
-                <option value="Lucida Console">Lucida Console</option>
-                <option value="Malgun Gothic">Malgun Gothic</option>
-                <option value="Microsoft Himalaya">Microsoft Himalaya</option>
-                <option value="Microsoft JhengHei">Microsoft JhengHei</option>
-                <option value="Microsoft New Tai Lue">Microsoft New Tai Lue</option>
-                <option value="Microsoft PhagsPa">Microsoft PhagsPa</option>
-                <option value="Microsoft Sans Serif">Microsoft Sans Serif</option>
-                <option value="Microsoft Tai Le">Microsoft Tai Le</option>
-                <option value="Microsoft YaHei">Microsoft YaHei</option>
-                <option value="Microsoft Yi Baiti">Microsoft Yi Baiti</option>
-                <option value="Mongolian Baiti">Mongolian Baiti</option>
-                <option value="MV Boli">MV Boli</option>
-                <option value="Myanmar Text">Myanmar Text</option>
-                <option value="Nirmala UI">Nirmala UI</option>
-                <option value="Palatino Linotype">Palatino Linotype</option>
-                <option value="Segoe Print">Segoe Print</option>
-                <option value="Segoe Script">Segoe Script</option>
-                <option value="Segoe UI">Segoe UI</option>
-                <option value="Segoe UI Historic">Segoe UI Historic</option>
-                <option value="Segoe UI Emoji">Segoe UI Emoji</option>
-                <option value="Segoe UI Symbol">Segoe UI Symbol</option>
-                <option value="SimSun">SimSun</option>
-                <option value="Sitka">Sitka</option>
-                <option value="Sylfaen">Sylfaen</option>
-                <option value="Symbol">Symbol</option>
-                <option value="Tahoma">Tahoma</option>
-                <option value="Trebuchet MS">Trebuchet MS</option>
-                <option value="Verdana">Verdana</option>
-                <option value="Webdings">Webdings</option>
-                <option value="Wingdings">Wingdings</option>
-                <option value="Yu Gothic">Yu Gothic</option>
-                <option value="Yu Gothic UI">Yu Gothic UI</option>
-                <option value="Yu Mincho">Yu Mincho</option>
-            </select> <br>
-            <input type="file" id="fontUploadInput" accept=".ttf,.otf">
-            <br><br>
-            <button id="knop2">SAVE</button>
-        </div>
-        <div class="ok" id="ok3">
-            <h2>Afbeelding edit</h2>
-            <input type="text" id="iBreedte" placeholder="150"> - breedte <br>
-            <input type="text" id="iHoogte" placeholder="150"> - hoogte <br>
-            <input type="text" id="top-bottom" placeholder="0"> - omhoog <br>
-            <input type="text" id="bottom-top" placeholder="60"> - omlaag <br>
-            <input type="text" id="right-left" placeholder="0"> - rechts <br>
-            <input type="text" id="left-right" placeholder="0"> - lings    
-            <br><br>
-            <button id="knop3">SAVE</button>
-        </div>
-        <div class="ok" id="ok4">
-            <h2>Titel/Naam edit</h2>
-            <input type="text" id="naam1" placeholder="titel box1"> - titel voor box1 <br>
-            <input type="text" id="naam2" placeholder="titel box2"> - titel voor box2<br>
-            <input type="text" id="naam3" placeholder="titel box3"> - titel voor box3<br>
-            <input type="text" id="naam4" placeholder="titel box4"> - titel voor box4
-            <br><br>
-            <button id="knop4">SAVE</button>
-        </div>
-    </div>
-    <div id="canvas"></div>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="test.js"></script>
 </body>

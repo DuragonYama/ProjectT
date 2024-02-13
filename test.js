@@ -1,3 +1,4 @@
+//versie 1
 const knop = document.getElementById("knop");
 const knop2 = document.getElementById("knop2");
 const knop3 = document.getElementById("knop3");
@@ -9,6 +10,9 @@ const imageContainer = document.querySelector("#imageInput2");
 const afbV = document.getElementById("afbV");
 var uploaded_image = "";
 
+document.getElementById("stop").addEventListener("click", function() {
+    document.querySelector(".list").style.display = "none";
+});
 knop.onclick = function () {
     let widthValue = document.getElementById("width").value;
     let heightValue = document.getElementById("height").value;
@@ -401,3 +405,5 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+//versie 2
