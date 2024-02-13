@@ -126,3 +126,21 @@ h1 {
     color: white;
     border: 1px solid black;
 }
+.versie1 {
+    display: none;
+}
+#versionChooser {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+#v1Choser, #v2Choser {
+    height: 100vh;
+    width: 50%;
+}
+#v1Choser {
+    background-color: lightgreen;
+}
+#v2Choser {
+    background-color: orange;
+}
