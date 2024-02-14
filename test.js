@@ -401,3 +401,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+//version 2
+
+//neither versions
+
+const v1 = document.getElementById("v1Choser");
+const v2 = document.getElementById("v2Choser");
+
+v1.addEventListener("click", function() {
+    document.querySelector(".versie1").style.display = "block";
+    document.getElementById("versionChooser").style.display = "none";
+});
