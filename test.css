@@ -129,6 +129,9 @@ h1 {
 .versie1 {
     display: none;
 }
+/* .versie2 {
+    display: none; BLIJFT WEG VOOR NU
+} */
 #versionChooser {
     display: flex;
     margin: 0;
@@ -146,9 +149,12 @@ h1 {
 }
 .v2Box {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .circle {
     width: 100px;
     height: 100px;
-    border-radius: 100px;
+    border-radius: 1000px;
+    border: solid red;
 }

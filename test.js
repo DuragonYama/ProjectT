@@ -412,3 +412,8 @@ v1.addEventListener("click", function() {
     document.querySelector(".versie1").style.display = "block";
     document.getElementById("versionChooser").style.display = "none";
 });
+
+v2.addEventListener("click", function() {
+    document.querySelector(".versie2").style.display = "block";
+    document.getElementById("versionChooser").style.display = "none";
+});
