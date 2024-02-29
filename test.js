@@ -12,15 +12,18 @@ var uploaded_image = "";
 knop.onclick = function () {
     let widthValue = document.getElementById("width").value;
     let heightValue = document.getElementById("height").value;
+    let boxBorder = document.getElementById("boxBorder").value;
     let backgroundColor = document.getElementById("color").value;
     let borderColor = document.getElementById("borderColor").value;
-
     document.querySelectorAll(".werk").forEach(function(e) {
         e.style.width = widthValue + "px";
     });
     document.querySelectorAll(".werk").forEach(function(e) {
         e.style.height = heightValue + "px";
     });
+    document.querySelectorAll(".werk").forEach(function(e) {
+        e.style.borderRadius = boxBorder + "px";
+    })
     document.querySelectorAll(".werk").forEach(function(e) {
         e.style.backgroundColor = backgroundColor;
     });
