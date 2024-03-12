@@ -154,27 +154,3 @@ h1 {
     /* border: solid; */
     margin-top: 10px;
 }
-.circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 1000px;
-    border: solid black;
-    margin-right: 4px;
-}
-.v2box-mini {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    position: absolute;
-    border: solid red;
-    width: 95%;
-    top: 100px;
-    left: 100px;
-}
-.mini-circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 100px;
-    border: solid black;
-    margin-right: 70px;
-}
