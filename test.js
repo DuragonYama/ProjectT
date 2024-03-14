@@ -1,419 +1,411 @@
-const knop = document.getElementById("knop");
-const knop2 = document.getElementById("knop2");
-const knop3 = document.getElementById("knop3");
-const knop4 = document.getElementById("knop4");
-const ss = document.getElementById("ss");
-const arti = document.getElementById("arti");
-const eksi = document.getElementById("eksi");
-const imageContainer = document.querySelector("#imageInput2");
-const afbV = document.getElementById("afbV");
-var uploaded_image = "";
+// const knop = document.getElementById("knop");
+// const knop2 = document.getElementById("knop2");
+// const knop3 = document.getElementById("knop3");
+// const knop4 = document.getElementById("knop4");
+// const ss = document.getElementById("ss");
+// const arti = document.getElementById("arti");
+// const eksi = document.getElementById("eksi");
+// const imageContainer = document.querySelector("#imageInput2");
+// const afbV = document.getElementById("afbV");
+// var uploaded_image = "";
 
-knop.onclick = function () {
-    let widthValue = document.getElementById("width").value;
-    let heightValue = document.getElementById("height").value;
-    let backgroundColor = document.getElementById("color").value;
-    let borderColor = document.getElementById("borderColor").value;
+// knop.onclick = function () {
+//     let widthValue = document.getElementById("width").value;
+//     let heightValue = document.getElementById("height").value;
+//     let backgroundColor = document.getElementById("color").value;
+//     let borderColor = document.getElementById("borderColor").value;
 
-    document.querySelectorAll(".werk").forEach(function(e) {
-        e.style.width = widthValue + "px";
-    });
-    document.querySelectorAll(".werk").forEach(function(e) {
-        e.style.height = heightValue + "px";
-    });
-    document.querySelectorAll(".werk").forEach(function(e) {
-        e.style.backgroundColor = backgroundColor;
-    });
-    document.querySelectorAll(".werk").forEach(function(e) {
-        e.style.border = borderColor + " solid 3px";
-    })
-};
+//     document.querySelectorAll(".werk").forEach(function(e) {
+//         e.style.width = widthValue + "px";
+//     });
+//     document.querySelectorAll(".werk").forEach(function(e) {
+//         e.style.height = heightValue + "px";
+//     });
+//     document.querySelectorAll(".werk").forEach(function(e) {
+//         e.style.backgroundColor = backgroundColor;
+//     });
+//     document.querySelectorAll(".werk").forEach(function(e) {
+//         e.style.border = borderColor + " solid 3px";
+//     })
+// };
 
-knop2.onclick = function () {
-    let p1Color = document.getElementById("p1Color").value;
-    let inhoudp1 = document.getElementById("inhoudp1").value;
-    let fSize = document.getElementById("fSize").value;
-    let inhoudp1Size = document.getElementById("inhoudp1Size").value;
-    // let titel = document.getElementById("title").value;
-    let textKleur = document.getElementById("textColor").value;
-    let pValue = document.getElementById("pValue").value;
-    let fontSelector = document.getElementById("fontChoser").value;
+// knop2.onclick = function () {
+//     let p1Color = document.getElementById("p1Color").value;
+//     let inhoudp1 = document.getElementById("inhoudp1").value;
+//     let fSize = document.getElementById("fSize").value;
+//     let inhoudp1Size = document.getElementById("inhoudp1Size").value;
+//     // let titel = document.getElementById("title").value;
+//     let textKleur = document.getElementById("textColor").value;
+//     let pValue = document.getElementById("pValue").value;
+//     let fontSelector = document.getElementById("fontChoser").value;
 
-    document.querySelectorAll("#werk").forEach(function(e) {
-        e.style.fontFamily = fontSelector;
-    });
-    document.querySelectorAll("#p1").forEach(function(e) {
-        e.style.color = p1Color;
-    });
-    document.querySelectorAll("#p1").forEach(function(e) {
-        e.innerText = inhoudp1;
-    });
-    document.querySelectorAll("h1").forEach(function(e) {
-        e.style.fontSize = fSize + "px";
-    });
-    document.querySelectorAll("#p1").forEach(function(e) {
-        e.style.fontSize = inhoudp1Size + "px";
-    });
-    document.querySelectorAll("h1").forEach(function(e) {
-        e.style.color = textKleur;
-    });
-    document.querySelectorAll("#p1").forEach(function(e) {
-        e.style.top = pValue + "px";
-    });
+//     document.querySelectorAll("#werk").forEach(function(e) {
+//         e.style.fontFamily = fontSelector;
+//     });
+//     document.querySelectorAll("#p1").forEach(function(e) {
+//         e.style.color = p1Color;
+//     });
+//     document.querySelectorAll("#p1").forEach(function(e) {
+//         e.innerText = inhoudp1;
+//     });
+//     document.querySelectorAll("h1").forEach(function(e) {
+//         e.style.fontSize = fSize + "px";
+//     });
+//     document.querySelectorAll("#p1").forEach(function(e) {
+//         e.style.fontSize = inhoudp1Size + "px";
+//     });
+//     document.querySelectorAll("h1").forEach(function(e) {
+//         e.style.color = textKleur;
+//     });
+//     document.querySelectorAll("#p1").forEach(function(e) {
+//         e.style.top = pValue + "px";
+//     });
 
-    // document.querySelector("h1").innerText = titel;
-};
+//     // document.querySelector("h1").innerText = titel;
+// };
 
-knop3.onclick = function () {
-    let imgWidth = document.querySelector("#iBreedte").value;
-    let imgHeight = document.querySelector("#iHoogte").value;
-    let topV = document.querySelector("#top-bottom").value;
-    let bottomV = document.querySelector("#bottom-top").value;
-    let rightV = document.querySelector("#right-left").value;
-    let leftV = document.querySelector("#left-right").value;
+// knop3.onclick = function () {
+//     let imgWidth = document.querySelector("#iBreedte").value;
+//     let imgHeight = document.querySelector("#iHoogte").value;
+//     let topV = document.querySelector("#top-bottom").value;
+//     let bottomV = document.querySelector("#bottom-top").value;
+//     let rightV = document.querySelector("#right-left").value;
+//     let leftV = document.querySelector("#left-right").value;
 
-    document.querySelectorAll(".image").forEach(function(e) {
-        e.style.width = imgWidth + "px";
-    });
-    document.querySelectorAll(".image").forEach(function(e) {
-        e.style.height = imgHeight + "px";
-    });
-    document.querySelectorAll(".image").forEach(function(e) {
-        e.style.bottom = topV + "px";
-    });
-    document.querySelectorAll(".image").forEach(function(e) {
-        e.style.top = bottomV + "px";
-    });
-    document.querySelectorAll(".image").forEach(function(e) {
-        e.style.right = leftV + "px";
-    });
-    document.querySelectorAll(".image").forEach(function(e) {
-        e.style.left = rightV + "px";
-    });
-};
-
-knop4.onclick = function () {
-    let naam1 = document.querySelector("#naam1").value;
-    let naam2 = document.querySelector("#naam2").value;
-    let naam3 = document.querySelector("#naam3").value;
-    let naam4 = document.querySelector("#naam4").value;
-
-    document.querySelector("#voorNaam1").innerText = naam1;
-    document.querySelector("#voorNaam2").innerText = naam2;
-    document.querySelector("#voorNaam3").innerText = naam3;
-    document.querySelector("#voorNaam4").innerText = naam4;
-};
-
-// ss.onclick = function () {
-//     html2canvas(document.querySelector(".werk")).then(canvas => {
-//         const blobURL = canvas.toDataURL();
-//         const downloadLink = document.createElement("a");
-//         downloadLink.href = blobURL;
-//         downloadLink.download = "screenshot.png";
-//         downloadLink.click();
+//     document.querySelectorAll(".image").forEach(function(e) {
+//         e.style.width = imgWidth + "px";
+//     });
+//     document.querySelectorAll(".image").forEach(function(e) {
+//         e.style.height = imgHeight + "px";
+//     });
+//     document.querySelectorAll(".image").forEach(function(e) {
+//         e.style.bottom = topV + "px";
+//     });
+//     document.querySelectorAll(".image").forEach(function(e) {
+//         e.style.top = bottomV + "px";
+//     });
+//     document.querySelectorAll(".image").forEach(function(e) {
+//         e.style.right = leftV + "px";
+//     });
+//     document.querySelectorAll(".image").forEach(function(e) {
+//         e.style.left = rightV + "px";
 //     });
 // };
 
-document.getElementById("imageInput2").addEventListener("change", function() {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => {
-        uploaded_image = reader.result;
-        document.querySelectorAll("#imageContainer").forEach(function(e) {
-            e.style.backgroundImage = `url(${uploaded_image})`;
-        });
-    });
-    reader.readAsDataURL(this.files[0]);
-});
+// knop4.onclick = function () {
+//     let naam1 = document.querySelector("#naam1").value;
+//     let naam2 = document.querySelector("#naam2").value;
+//     let naam3 = document.querySelector("#naam3").value;
+//     let naam4 = document.querySelector("#naam4").value;
 
-function removeUploadedImage() {
-    document.querySelectorAll("#imageContainer").forEach(function(e) {
-        e.style.backgroundImage = ""; // Set backgroundImage to an empty string
-    });
-};
+//     document.querySelector("#voorNaam1").innerText = naam1;
+//     document.querySelector("#voorNaam2").innerText = naam2;
+//     document.querySelector("#voorNaam3").innerText = naam3;
+//     document.querySelector("#voorNaam4").innerText = naam4;
+// };
 
-afbV.onclick = function () {
-    removeUploadedImage();
-};
+// document.getElementById("imageInput2").addEventListener("change", function() {
+//     const reader = new FileReader();
+//     reader.addEventListener("load", () => {
+//         uploaded_image = reader.result;
+//         document.querySelectorAll("#imageContainer").forEach(function(e) {
+//             e.style.backgroundImage = `url(${uploaded_image})`;
+//         });
+//     });
+//     reader.readAsDataURL(this.files[0]);
+// });
 
-const kg1 = document.getElementById("kg1");
-const kg2 = document.getElementById("kg2");
-const kg3 = document.getElementById("kg3");
-const kg4 = document.getElementById("kg4");
+// function removeUploadedImage() {
+//     document.querySelectorAll("#imageContainer").forEach(function(e) {
+//         e.style.backgroundImage = ""; // Set backgroundImage to an empty string
+//     });
+// };
 
-const ok1 = document.getElementById("ok1");
-const ok2 = document.getElementById("ok2");
-const ok3 = document.getElementById("ok3");
-const ok4 = document.getElementById("ok4");
+// afbV.onclick = function () {
+//     removeUploadedImage();
+// };
 
-kg1.addEventListener("click", function() {
-    ok1.style.display = "block";
-    ok2.style.display = "none";
-    ok3.style.display = "none";
-    ok4.style.display = "none";
-});
+// const kg1 = document.getElementById("kg1");
+// const kg2 = document.getElementById("kg2");
+// const kg3 = document.getElementById("kg3");
+// const kg4 = document.getElementById("kg4");
 
-kg2.addEventListener("click", function() {
-    ok1.style.display = "none";
-    ok2.style.display = "block";
-    ok3.style.display = "none";
-    ok4.style.display = "none";
-});
+// const ok1 = document.getElementById("ok1");
+// const ok2 = document.getElementById("ok2");
+// const ok3 = document.getElementById("ok3");
+// const ok4 = document.getElementById("ok4");
 
-kg3.addEventListener("click", function() {
-    ok1.style.display = "none";
-    ok2.style.display = "none";
-    ok3.style.display = "block";
-    ok4.style.display = "none";
-});
+// kg1.addEventListener("click", function() {
+//     ok1.style.display = "block";
+//     ok2.style.display = "none";
+//     ok3.style.display = "none";
+//     ok4.style.display = "none";
+// });
 
-kg4.addEventListener("click", function() {
-    ok1.style.display = "none";
-    ok2.style.display = "none";
-    ok3.style.display = "none";
-    ok4.style.display = "block";
-});
+// kg2.addEventListener("click", function() {
+//     ok1.style.display = "none";
+//     ok2.style.display = "block";
+//     ok3.style.display = "none";
+//     ok4.style.display = "none";
+// });
 
-//save
+// kg3.addEventListener("click", function() {
+//     ok1.style.display = "none";
+//     ok2.style.display = "none";
+//     ok3.style.display = "block";
+//     ok4.style.display = "none";
+// });
 
-function saveData(key) {
-    const dataToSave = {
-        boxWidth: document.getElementById("width").value,
-        boxHeight: document.getElementById("height").value,
-        backgroundC: document.getElementById("color").value,
-        borderC: document.getElementById("borderColor").value,
-        tekstC: document.getElementById("p1Color").value,
-        tekstInhoud: document.getElementById("inhoudp1").value,
-        fSize: document.getElementById("fSize").value,
-        inhoudp1Size: document.getElementById("inhoudp1Size").value,
-        textColor: document.getElementById("textColor").value,
-        pValue: document.getElementById("pValue").value,
-        fontChoser: document.getElementById("fontChoser").value,
-        iBreedte: document.querySelector("#iBreedte").value,
-        iHoogte: document.querySelector("#iHoogte").value,
-        topBottom: document.querySelector("#top-bottom").value,
-        bottomTop: document.querySelector("#bottom-top").value,
-        rightLeft: document.querySelector("#right-left").value,
-        leftRight: document.querySelector("#left-right").value,
-        naam1: document.querySelector("#naam1").value,
-        naam2: document.querySelector("#naam2").value,
-        naam3: document.querySelector("#naam3").value,
-        naam4: document.querySelector("#naam4").value
-    };
-    localStorage.setItem(key, JSON.stringify(dataToSave));
-};
+// kg4.addEventListener("click", function() {
+//     ok1.style.display = "none";
+//     ok2.style.display = "none";
+//     ok3.style.display = "none";
+//     ok4.style.display = "block";
+// });
 
-function loadData(key) {
-    const savedData = JSON.parse(localStorage.getItem(key));
-    if(savedData) {
-        document.getElementById("width").value = savedData.boxWidth;
-        document.getElementById("height").value = savedData.boxHeight;
-        document.getElementById("color").value = savedData.backgroundC;
-        document.getElementById("borderColor").value = savedData.borderC;
-        document.getElementById("p1Color").value = savedData.tekstC;
-        document.getElementById("inhoudp1").value = savedData.tekstInhoud;
-        document.getElementById("fSize").value = savedData.fSize;
-        document.getElementById("inhoudp1Size").value = savedData.inhoudp1Size;
-        document.getElementById("textColor").value = savedData.textColor;
-        document.getElementById("pValue").value = savedData.pValue;
-        document.getElementById("fontChoser").value = savedData.fontChoser;
-        document.querySelector("#iBreedte").value = savedData.iBreedte;
-        document.querySelector("#iHoogte").value = savedData.iHoogte;
-        document.getElementById("naam1").value = savedData.naam1;
-        document.getElementById("naam2").value = savedData.naam2;
-        document.getElementById("naam3").value = savedData.naam3;
-        document.getElementById("naam4").value = savedData.naam4;
-    };
-};
+// //save
 
-document.getElementById("saveButton").addEventListener("click", function() {
-    const saveKey = prompt("Geef een naam aan dit ontwerp om te kunnen opslaan");
-    if (saveKey) {
-        saveData(saveKey);
-        alert("Data is opgeslagen");
-    }
-});
+// function saveData(key) {
+//     const dataToSave = {
+//         boxWidth: document.getElementById("width").value,
+//         boxHeight: document.getElementById("height").value,
+//         backgroundC: document.getElementById("color").value,
+//         borderC: document.getElementById("borderColor").value,
+//         tekstC: document.getElementById("p1Color").value,
+//         tekstInhoud: document.getElementById("inhoudp1").value,
+//         fSize: document.getElementById("fSize").value,
+//         inhoudp1Size: document.getElementById("inhoudp1Size").value,
+//         textColor: document.getElementById("textColor").value,
+//         pValue: document.getElementById("pValue").value,
+//         fontChoser: document.getElementById("fontChoser").value,
+//         iBreedte: document.querySelector("#iBreedte").value,
+//         iHoogte: document.querySelector("#iHoogte").value,
+//         topBottom: document.querySelector("#top-bottom").value,
+//         bottomTop: document.querySelector("#bottom-top").value,
+//         rightLeft: document.querySelector("#right-left").value,
+//         leftRight: document.querySelector("#left-right").value,
+//         naam1: document.querySelector("#naam1").value,
+//         naam2: document.querySelector("#naam2").value,
+//         naam3: document.querySelector("#naam3").value,
+//         naam4: document.querySelector("#naam4").value
+//     };
+//     localStorage.setItem(key, JSON.stringify(dataToSave));
+// };
 
-document.getElementById("loadButton").addEventListener("click", function() {
-    const loadKey = prompt("Geef aan het naam van je werk dat je wilt openen");
-    if(loadKey) {
-        loadData(loadKey);
-        alert("Je werk is geopend!");
-        document.getElementById("knop").click();
-        document.getElementById("knop2").click();
-        document.getElementById("knop3").click();
-        document.getElementById("knop4").click();
-    }
-});
+// function loadData(key) {
+//     const savedData = JSON.parse(localStorage.getItem(key));
+//     if(savedData) {
+//         document.getElementById("width").value = savedData.boxWidth;
+//         document.getElementById("height").value = savedData.boxHeight;
+//         document.getElementById("color").value = savedData.backgroundC;
+//         document.getElementById("borderColor").value = savedData.borderC;
+//         document.getElementById("p1Color").value = savedData.tekstC;
+//         document.getElementById("inhoudp1").value = savedData.tekstInhoud;
+//         document.getElementById("fSize").value = savedData.fSize;
+//         document.getElementById("inhoudp1Size").value = savedData.inhoudp1Size;
+//         document.getElementById("textColor").value = savedData.textColor;
+//         document.getElementById("pValue").value = savedData.pValue;
+//         document.getElementById("fontChoser").value = savedData.fontChoser;
+//         document.querySelector("#iBreedte").value = savedData.iBreedte;
+//         document.querySelector("#iHoogte").value = savedData.iHoogte;
+//         document.getElementById("naam1").value = savedData.naam1;
+//         document.getElementById("naam2").value = savedData.naam2;
+//         document.getElementById("naam3").value = savedData.naam3;
+//         document.getElementById("naam4").value = savedData.naam4;
+//     };
+// };
 
-function getSavedKey() {
-    const keys = [];
-    for (let i = 0; i < localStorage.length; i++) {
-        keys.push(localStorage.key(i));
-    }
-    return keys;
-};
+// document.getElementById("saveButton").addEventListener("click", function() {
+//     const saveKey = prompt("Geef een naam aan dit ontwerp om te kunnen opslaan");
+//     if (saveKey) {
+//         saveData(saveKey);
+//         alert("Data is opgeslagen");
+//     }
+// });
 
-function displaySavedKeys() {
-    const savedKeys = getSavedKey();
-    const listContainer = document.getElementById("savedKeyL");
+// document.getElementById("loadButton").addEventListener("click", function() {
+//     const loadKey = prompt("Geef aan het naam van je werk dat je wilt openen");
+//     if(loadKey) {
+//         loadData(loadKey);
+//         alert("Je werk is geopend!");
+//         document.getElementById("knop").click();
+//         document.getElementById("knop2").click();
+//         document.getElementById("knop3").click();
+//         document.getElementById("knop4").click();
+//     }
+// });
 
-    listContainer.innerHTML = "";
+// function getSavedKey() {
+//     const keys = [];
+//     for (let i = 0; i < localStorage.length; i++) {
+//         keys.push(localStorage.key(i));
+//     }
+//     return keys;
+// };
 
-    savedKeys.forEach(function(e) {
-        const listItem = document.createElement("li");
-        listItem.textContent = e;
-        listContainer.appendChild(listItem);
-    });
-    document.getElementById("stop").style.display = "block";
+// function displaySavedKeys() {
+//     const savedKeys = getSavedKey();
+//     const listContainer = document.getElementById("savedKeyL");
 
-    document.getElementById("stop").addEventListener("click", function () {
-        listContainer.innerHTML = "";
-        document.getElementById("stop").style.display = "none";
-    });
-};
+//     listContainer.innerHTML = "";
 
-function hakai() {
-    const hakaii = prompt("Wat wil je verwijderen? voer het naam in.");
+//     savedKeys.forEach(function(e) {
+//         const listItem = document.createElement("li");
+//         listItem.textContent = e;
+//         listContainer.appendChild(listItem);
+//     });
+//     document.getElementById("stop").style.display = "block";
 
-    if(hakaii) {
-        localStorage.removeItem(hakaii);
-        alert("Je werk " + hakaii + " is verwijdert");
-    } else {
-        alert("Dit bestaat niet!");
-    }
-};
+//     document.getElementById("stop").addEventListener("click", function () {
+//         listContainer.innerHTML = "";
+//         document.getElementById("stop").style.display = "none";
+//     });
+// };
 
-document.getElementById("fontUploadInput").addEventListener("change", fontChange);
+// function hakai() {
+//     const hakaii = prompt("Wat wil je verwijderen? voer het naam in.");
 
-function fontChange(e) {
-    const fontFile = e.target.files[0];
+//     if(hakaii) {
+//         localStorage.removeItem(hakaii);
+//         alert("Je werk " + hakaii + " is verwijdert");
+//     } else {
+//         alert("Dit bestaat niet!");
+//     }
+// };
 
-    if (fontFile) {
-        const fontFileURL = URL.createObjectURL(fontFile);
-        const fontFace = new FontFace('CustomFont', `url('${fontFileURL}')`);
+// document.getElementById("fontUploadInput").addEventListener("change", fontChange);
 
-        fontFace.load().then(function(loadedFont) {
-            document.fonts.add(loadedFont);
-            setInterval(() => {
-                document.querySelectorAll("#werk").forEach(function(e) {
-                    e.style.fontFamily = "CustomFont, Arial, sans-serif";
-                });
-            }, 1000);
-        }).catch(function(error) {
-            console.error('Font loading failed: ', error);
-        });
-    }
-}
+// function fontChange(e) {
+//     const fontFile = e.target.files[0];
 
-//niet mijn code
-document.addEventListener('DOMContentLoaded', function () {
-    const canvas = document.getElementById('canvas');
-    const imageInput = document.getElementById('imageInput');
+//     if (fontFile) {
+//         const fontFileURL = URL.createObjectURL(fontFile);
+//         const fontFace = new FontFace('CustomFont', `url('${fontFileURL}')`);
 
-    imageInput.addEventListener('change', handleImageUpload);
+//         fontFace.load().then(function(loadedFont) {
+//             document.fonts.add(loadedFont);
+//             setInterval(() => {
+//                 document.querySelectorAll("#werk").forEach(function(e) {
+//                     e.style.fontFamily = "CustomFont, Arial, sans-serif";
+//                 });
+//             }, 1000);
+//         }).catch(function(error) {
+//             console.error('Font loading failed: ', error);
+//         });
+//     }
+// }
 
-    canvas.addEventListener('dragover', (e) => e.preventDefault());
-    canvas.addEventListener('drop', handleDrop);
+// //niet mijn code
+// document.addEventListener('DOMContentLoaded', function () {
+//     const canvas = document.getElementById('canvas');
+//     const imageInput = document.getElementById('imageInput');
 
-    function handleImageUpload(event) {
-        const file = event.target.files[0];
+//     imageInput.addEventListener('change', handleImageUpload);
 
-        if (file) {
-            const reader = new FileReader();
+//     canvas.addEventListener('dragover', (e) => e.preventDefault());
+//     canvas.addEventListener('drop', handleDrop);
 
-            reader.onload = function (e) {
-                const img = new Image();
-                img.src = e.target.result;
+//     function handleImageUpload(event) {
+//         const file = event.target.files[0];
 
-                img.onload = function () {
-                    addImageToCanvas(img);
-                    // Clear the value of the file input
-                    imageInput.value = '';
-                };
-            };
+//         if (file) {
+//             const reader = new FileReader();
 
-            reader.readAsDataURL(file);
-        }
-    }
+//             reader.onload = function (e) {
+//                 const img = new Image();
+//                 img.src = e.target.result;
 
-    function handleDrop(event) {
-        event.preventDefault();
+//                 img.onload = function () {
+//                     addImageToCanvas(img);
+//                     imageInput.value = '';
+//                 };
+//             };
 
-        const file = event.dataTransfer.files[0];
+//             reader.readAsDataURL(file);
+//         }
+//     }
 
-        if (file) {
-            const reader = new FileReader();
+//     function handleDrop(event) {
+//         event.preventDefault();
 
-            reader.onload = function (e) {
-                const img = new Image();
-                img.src = e.target.result;
+//         const file = event.dataTransfer.files[0];
 
-                img.onload = function () {
-                    addImageToCanvas(img, event.clientX, event.clientY);
-                    // Clear the value of the file input
-                    imageInput.value = '';
-                };
-            };
+//         if (file) {
+//             const reader = new FileReader();
 
-            reader.readAsDataURL(file);
-        }
-    }
+//             reader.onload = function (e) {
+//                 const img = new Image();
+//                 img.src = e.target.result;
 
-    function addImageToCanvas(img, x = 0, y = 0) {
-        const draggableImage = document.createElement('img');
-        draggableImage.src = img.src;
-        draggableImage.className = 'draggable';
+//                 img.onload = function () {
+//                     addImageToCanvas(img, event.clientX, event.clientY);
+//                     imageInput.value = '';
+//                 };
+//             };
+
+//             reader.readAsDataURL(file);
+//         }
+//     }
+
+//     function addImageToCanvas(img, x = 0, y = 0) {
+//         const draggableImage = document.createElement('img');
+//         draggableImage.src = img.src;
+//         draggableImage.className = 'draggable';
     
-        // Set initial position
-        draggableImage.style.position = 'absolute';
-        draggableImage.style.left = x + 'px';
-        draggableImage.style.top = y + 'px';
+//         draggableImage.style.position = 'absolute';
+//         draggableImage.style.left = x + 'px';
+//         draggableImage.style.top = y + 'px';
     
-        draggableImage.draggable = true;
+//         draggableImage.draggable = true;
     
-        draggableImage.addEventListener('dragstart', (event) => {
-            event.dataTransfer.setData('text/plain', 'draggable'); // For Firefox support
-        });
+//         draggableImage.addEventListener('dragstart', (event) => {
+//             event.dataTransfer.setData('text/plain', 'draggable');
+//         });
     
-        // Handle double-click to remove the image
-        draggableImage.addEventListener('dblclick', () => {
-            draggableImage.remove();
-        });
+//         draggableImage.addEventListener('dblclick', () => {
+//             draggableImage.remove();
+//         });
     
-        document.querySelector('.werk').appendChild(draggableImage); // Append to .werk directly
+//         document.querySelector('.werk').appendChild(draggableImage);
     
-        // Handle real-time movement during mousemove
-        const handleMouseMove = (event) => {
-            const boundingRect = document.querySelector('.werk').getBoundingClientRect();
-            const newX = event.clientX - boundingRect.left;
-            const newY = event.clientY - boundingRect.top;
+//         const handleMouseMove = (event) => {
+//             const boundingRect = document.querySelector('.werk').getBoundingClientRect();
+//             const newX = event.clientX - boundingRect.left;
+//             const newY = event.clientY - boundingRect.top;
     
-            draggableImage.style.left = newX + 'px';
-            draggableImage.style.top = newY + 'px';
-        };
+//             draggableImage.style.left = newX + 'px';
+//             draggableImage.style.top = newY + 'px';
+//         };
     
-        // Add event listener for mousemove
-        document.addEventListener('mousemove', handleMouseMove);
+//         document.addEventListener('mousemove', handleMouseMove);
     
-        // Remove event listener after mouseup
-        document.addEventListener('mouseup', () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-        });
-    }
-});
+//         document.addEventListener('mouseup', () => {
+//             document.removeEventListener('mousemove', handleMouseMove);
+//         });
+//     }
+// });
 //version 2
+
+const rijen = document.getElementById("aantalRijen").value;
+const columns = document.getElementById("aantalKolommen").value;
+const v2knop1 = $("#aantalButton");
+
+v2knop1.on("click", function() {
+    console.log("thanks bud");
+});
 
 //neither versions
 
-const v1 = document.getElementById("v1Choser");
-const v2 = document.getElementById("v2Choser");
+// const v1 = document.getElementById("v1Choser");
+// const v2 = document.getElementById("v2Choser");
 
-v1.addEventListener("click", function() {
-    document.querySelector(".versie1").style.display = "block";
-    document.getElementById("versionChooser").style.display = "none";
-});
 
-v2.addEventListener("click", function() {
-    document.querySelector(".versie2").style.display = "block";
-    document.getElementById("versionChooser").style.display = "none";
-});
+// v1.addEventListener("click", function() {
+//     document.querySelector(".versie1").style.display = "block";
+//     document.getElementById("versionChooser").style.display = "none";
+// });
+
+// v2.addEventListener("click", function() {
+//     document.querySelector(".versie2").style.display = "block";
+//     document.getElementById("versionChooser").style.display = "none";
+// });

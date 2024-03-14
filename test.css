@@ -170,3 +170,8 @@ h1 {
     position: relative;
     left: 5px;
 }
+.selectBoxes {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+}
