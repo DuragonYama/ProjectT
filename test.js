@@ -386,152 +386,12 @@
 // });
 //version 2
 
-const v2knop1 = $("#aantalButton");
-
-// v2knop1.on("click", function() {
-//     const rijen = document.getElementById("aantalRijen").value;
-//     // const columns = document.getElementById("aantalKolommen").value;
-
-//         if (rijen % 2 == 0) {
-//             document.querySelector(".v2Box").innerHTML += `            <div class="miniBoxContainerv1">
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//         </div>`;
-//         } else {
-//             document.querySelector(".v2Box").innerHTML += `     <div class="miniBoxContainerv2">
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//             <div class="miniBox"></div>
-//         </div>`;
-//         }
-// });
-
 const rijen = $("#aantalRijen");
 const C = $("#aantalKolommen");
+const rijenMin = $("#aantalRijen-");
+const CMin = $("#aantalKolommen-");
 var aantal = 0;
-var aantal2 = 64;
-var aantalMiniBoxes = '';
+var aantal2 = 62;
 let class1;
 
 rijen.on("click", function() {
@@ -547,14 +407,101 @@ rijen.on("click", function() {
     </div>`;
 });
 
+var aantalMiniBoxes = `<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>
+<div class="miniBox"></div>` ;
+
 C.on("click", function() {
     aantal2 += 1;
+    aantalMiniBoxes = "";
 
     $(".miniBoxContainerv1").append(`<div class="miniBox"></div>`);
     $(".miniBoxContainerv2").append(`<div class="miniBox"></div>`);
 
     for (let i = 0; i <= aantal2; i++) {
         aantalMiniBoxes += `<div class="miniBox"></div>`;
+    }
+});
+
+rijenMin.on("click", function() {
+    $(".v2Box .miniBoxContainerv1").last().remove();
+    $(".v2Box .miniBoxContainerv2").last().remove();
+});
+
+CMin.on("click", function() {
+    aantal2 -=1;
+    aantalMiniBoxes = "";
+
+    $(".miniBoxContainerv1").each(function() {
+        $(this).find(".miniBox").last().remove();
+    });
+    
+    $(".miniBoxContainerv2").each(function() {
+        $(this).find(".miniBox").last().remove();
+    });
+
+    for (let i = 0; i <= aantal2; i++) {
+        aantalMiniBoxes += `<div class="miniBox"></div>`
     }
 });
 //neither versions

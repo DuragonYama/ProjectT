@@ -173,7 +173,6 @@ h1 {
 .selectBoxes {
     display: flex;
     flex-direction: column;
-    width: 40px;
     position: absolute;
     top: 20px;
 }
