@@ -504,6 +504,11 @@ CMin.on("click", function() {
         aantalMiniBoxes += `<div class="miniBox"></div>`
     }
 });
+
+document.querySelector("#colorSaver").onclick = function() {
+    let kleur = document.querySelector("#colapicka").value;
+    console.log(kleur);
+};
 //neither versions
 
 // const v1 = document.getElementById("v1Choser");
