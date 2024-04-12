@@ -405,6 +405,7 @@ rijen.on("click", function() {
     document.querySelector(".v2Box").innerHTML += `<div class="${class1}">
     ${aantalMiniBoxes}
     </div>`;
+    kleurenZien();
 });
 
 var aantalMiniBoxes = `<div class="miniBox"></div>
@@ -481,11 +482,13 @@ C.on("click", function() {
     for (let i = 0; i <= aantal2; i++) {
         aantalMiniBoxes += `<div class="miniBox"></div>`;
     }
+    kleurenZien();
 });
 
 rijenMin.on("click", function() {
     $(".v2Box .miniBoxContainerv1").last().remove();
     $(".v2Box .miniBoxContainerv2").last().remove();
+    kleurenZien();
 });
 
 CMin.on("click", function() {
@@ -503,12 +506,76 @@ CMin.on("click", function() {
     for (let i = 0; i <= aantal2; i++) {
         aantalMiniBoxes += `<div class="miniBox"></div>`
     }
+    kleurenZien();
 });
 
-document.querySelector("#colorSaver").onclick = function() {
+function enkelKleur() {
     let kleur = document.querySelector("#colapicka").value;
-    console.log(kleur);
+    $(".miniBox").on("click", function(){
+        $(this).css("backgroundColor", kleur);
+    });
+}
+
+function rijenKleur() {
+    let kleur2 = document.querySelector("#colapicka2").value;
+    $(".miniBoxContainerv2, .miniBoxContainerv1").on("click", function() {
+        $(this).find(".miniBox").css("backgroundColor", kleur2);
+    });
+}
+
+function alleKleuren() {
+    let kleur3 = document.querySelector("#colapicka3").value 
+    $(".v2Box .miniBox").css("backgroundColor", kleur3);
+}
+function kleurenZien() {
+    document.getElementById("colorSaver").style.backgroundColor = "";
+    document.getElementById("colorSaver2").style.backgroundColor = "";
+    $(".miniBox").on("mouseover", function() {
+        let boxKleur = $(this).css("backgroundColor");
+        $("#kleurCode").text(boxKleur);
+    });
+}
+
+document.querySelector("#colorSaver").onclick = function() {
+    $(".miniBoxContainerv2, .miniBoxContainerv1").off("click");
+    document.getElementById("colorSaver").style.backgroundColor = "lightblue";
+    document.getElementById("colorSaver2").style.backgroundColor = "";
+    enkelKleur();
 };
+document.querySelector("#colorSaver2").onclick = function() {
+    $(".miniBox").off("click");
+    document.getElementById("colorSaver").style.backgroundColor = "";
+    document.getElementById("colorSaver2").style.backgroundColor = "lightblue";
+    rijenKleur();
+};
+document.querySelector("#colorSaver3").onclick = function() {
+    $(".miniBox").off("click");
+    $(".miniBoxContainerv2, .miniBoxContainerv1").off("click");
+    document.getElementById("colorSaver").style.backgroundColor = "";
+    document.getElementById("colorSaver2").style.backgroundColor = "";
+    alleKleuren();
+};
+document.querySelector("#wit").addEventListener("click", function() {
+        let box = document.querySelectorAll(".miniBox");
+
+        box.forEach(function(e) {
+            e.style.border = "1px solid white";
+        });
+});
+document.querySelector("#zwart").addEventListener("click", function() {
+    let box = document.querySelectorAll(".miniBox");
+
+    box.forEach(function(e) {
+        e.style.border = "1px solid black";
+    });
+});
+document.querySelector("#grijs").addEventListener("click", function() {
+    let box = document.querySelectorAll(".miniBox");
+
+    box.forEach(function(e) {
+        e.style.border = "1px solid grey";
+    });
+});
 //neither versions
 
 // const v1 = document.getElementById("v1Choser");

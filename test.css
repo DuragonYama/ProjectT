@@ -175,3 +175,25 @@ h1 {
     position: absolute;
     top: 20px;
 }
+#kleurCode {
+    position: absolute;
+    top: 280px;
+}
+#zwart {
+    position: absolute;
+    top: 320px;
+    font-size: 10px;
+}
+#wit {
+    position: absolute;
+    top: 340px;
+    font-size: 10px;
+}
+#grijs {
+    position: absolute;
+    top: 360px;
+    font-size: 10px;
+}
+#zwart:hover, #wit:hover, #grijs:hover {
+    cursor:pointer;
+}
