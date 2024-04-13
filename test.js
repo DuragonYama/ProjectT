@@ -576,6 +576,65 @@ document.querySelector("#grijs").addEventListener("click", function() {
         e.style.border = "1px solid grey";
     });
 });
+// Define an array to store the history of changes
+var changesHistory = [];
+
+// Function to add a change to the history
+function addToHistory(action) {
+    changesHistory.push(action);
+}
+
+// Function to undo the last change
+function undoChange() {
+    if (changesHistory.length > 0) {
+        var lastChange = changesHistory.pop();
+        if (lastChange.action === "color") {
+            $(lastChange.target).css("backgroundColor", lastChange.oldColor);
+        } else if (lastChange.action === "border") {
+            $(lastChange.target).css("border", lastChange.oldBorder);
+        }
+    }
+}
+
+// Function to handle changing color
+function changeColor(target, newColor) {
+    var oldColor = $(target).css("backgroundColor");
+    $(target).css("backgroundColor", newColor);
+    // Add the change to history
+    addToHistory({
+        action: "color",
+        target: target,
+        oldColor: oldColor
+    });
+}
+
+// Function to handle changing border
+function changeBorder(target, newBorder) {
+    var oldBorder = $(target).css("border");
+    $(target).css("border", newBorder);
+    // Add the change to history
+    addToHistory({
+        action: "border",
+        target: target,
+        oldBorder: oldBorder
+    });
+}
+
+// Modify your existing event listeners to use the new functions
+
+// Example of modifying the enkelKleur function
+function enkelKleur() {
+    let kleur = document.querySelector("#colapicka").value;
+    $(".miniBox").on("click", function(){
+        changeColor(this, kleur);
+    });
+}
+
+// Example of modifying the undo event listener
+document.getElementById("undo").onclick = function() {
+    undoChange();
+};
+
 //neither versions
 
 // const v1 = document.getElementById("v1Choser");

@@ -197,3 +197,12 @@ h1 {
 #zwart:hover, #wit:hover, #grijs:hover {
     cursor:pointer;
 }
+.undo {
+    width: 10px;
+    height: 10px;
+}
+#undo {
+    width: 30px;
+    position: absolute;
+    left: 100px;
+}
