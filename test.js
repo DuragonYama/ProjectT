@@ -262,17 +262,6 @@
 //     });
 // };
 
-// function hakai() {
-//     const hakaii = prompt("Wat wil je verwijderen? voer het naam in.");
-
-//     if(hakaii) {
-//         localStorage.removeItem(hakaii);
-//         alert("Je werk " + hakaii + " is verwijdert");
-//     } else {
-//         alert("Dit bestaat niet!");
-//     }
-// };
-
 // document.getElementById("fontUploadInput").addEventListener("change", fontChange);
 
 // function fontChange(e) {
@@ -386,7 +375,8 @@
 // });
 //version 2
 
-const rijen = $("#aantalRijen");
+$(document).ready(function() {
+    const rijen = $("#aantalRijen");
 const C = $("#aantalKolommen");
 const rijenMin = $("#aantalRijen-");
 const CMin = $("#aantalKolommen-");
@@ -576,15 +566,12 @@ document.querySelector("#grijs").addEventListener("click", function() {
         e.style.border = "1px solid grey";
     });
 });
-// Define an array to store the history of changes
 var changesHistory = [];
 
-// Function to add a change to the history
 function addToHistory(action) {
     changesHistory.push(action);
 }
 
-// Function to undo the last change
 function undoChange() {
     if (changesHistory.length > 0) {
         var lastChange = changesHistory.pop();
@@ -596,11 +583,9 @@ function undoChange() {
     }
 }
 
-// Function to handle changing color
 function changeColor(target, newColor) {
     var oldColor = $(target).css("backgroundColor");
     $(target).css("backgroundColor", newColor);
-    // Add the change to history
     addToHistory({
         action: "color",
         target: target,
@@ -608,11 +593,9 @@ function changeColor(target, newColor) {
     });
 }
 
-// Function to handle changing border
 function changeBorder(target, newBorder) {
     var oldBorder = $(target).css("border");
     $(target).css("border", newBorder);
-    // Add the change to history
     addToHistory({
         action: "border",
         target: target,
@@ -620,9 +603,6 @@ function changeBorder(target, newBorder) {
     });
 }
 
-// Modify your existing event listeners to use the new functions
-
-// Example of modifying the enkelKleur function
 function enkelKleur() {
     let kleur = document.querySelector("#colapicka").value;
     $(".miniBox").on("click", function(){
@@ -630,11 +610,123 @@ function enkelKleur() {
     });
 }
 
-// Example of modifying the undo event listener
 document.getElementById("undo").onclick = function() {
     undoChange();
 };
+let saveKnopKleur = document.getElementById("kleurSaveKnop");
+let loadKnopKleur = document.getElementById("kleurLoadKnop");
 
+saveKnopKleur.onclick = function() {
+    let saveNaamKleur = prompt("Naam van dit miyuki:");
+
+    saveKleur(saveNaamKleur);
+};
+
+loadKnopKleur.onclick = function() {
+    let loadNaamKleur = prompt("Welk miyuki wil je openen:");
+
+    loadKleur(loadNaamKleur);
+}
+
+function saveKleur(name) {
+    let kleurenArray = {
+        miniBoxContainerv1Count: $(".v2Box .miniBoxContainerv1").length,
+        miniBoxContainerv2Count: $(".v2Box .miniBoxContainerv2").length,
+        v2BoxCount: $(".v2Box .miniBoxContainerv2").length,
+        textBlok: document.querySelector("#notiBlok").value,
+        miniBoxesData: []
+    };
+
+    $(".v2Box .miniBoxContainerv1, .v2Box .miniBoxContainerv2").each(function() {
+        let count = $(this).find('.miniBox').length;
+        kleurenArray.miniBoxesData.push(count);
+        $(this).find('.miniBox').each(function() {
+            let kleurVanBox = $(this).css("backgroundColor");
+            kleurenArray.miniBoxesData.push(kleurVanBox);
+        });
+    });
+
+    localStorage.setItem(name, JSON.stringify(kleurenArray));
+}
+
+
+function loadKleur(name) {
+    let savedKleur = localStorage.getItem(name);
+
+    if (savedKleur) {
+        let progressKleur = JSON.parse(savedKleur);
+
+        $(".v2Box").empty();
+        $("#notiBlok").empty();
+
+        $("#notiBlok").text(progressKleur.textBlok);
+
+        for (let i = 0; i < progressKleur.miniBoxContainerv2Count + progressKleur.miniBoxContainerv1Count; i++) {
+            if (i % 2 == 0) {
+                $(".v2Box").append('<div class="miniBoxContainerv1"></div>');
+            } else {
+                $(".v2Box").append('<div class="miniBoxContainerv2"></div>');
+            }
+        }
+
+        let dataIndex = 0;
+        $(".v2Box .miniBoxContainerv1, .v2Box .miniBoxContainerv2").each(function() {
+            let miniBoxCount = progressKleur.miniBoxesData[dataIndex];
+            dataIndex++;
+
+            for (let i = 0; i < miniBoxCount; i++) {
+                $(this).append('<div class="miniBox"></div>');
+                $(this).find('.miniBox').eq(i).css("backgroundColor", progressKleur.miniBoxesData[dataIndex]);
+                dataIndex++;
+            }
+        });
+    } else {
+        alert("Dit bestaat niet");
+    }
+}
+setInterval(() => {
+    $("#notiBlok").focus();   
+}, 0);
+});
+let verwijderKnopKleur = $("#kleurVerwijderen");
+verwijderKnopKleur.on("click", hakai);
+function hakai() {
+    const hakaii = prompt("Wat wil je verwijderen? voer het naam in.");
+
+    if(hakaii) {
+        localStorage.removeItem(hakaii);
+        alert("Je miyuki " + hakaii + " is verwijdert");
+    } else {
+        alert("Dit bestaat niet!");
+    }
+};
+function getSavedKey() {
+    const keys = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        keys.push(localStorage.key(i));
+    }
+    return keys;
+};
+function displaySavedKeys() {
+    const savedKeys = getSavedKey();
+    const listContainer = document.getElementById("savedKeyL");
+
+    listContainer.innerHTML = "";
+
+    savedKeys.forEach(function(e) {
+        const listItem = document.createElement("li");
+        listItem.textContent = e;
+        listContainer.appendChild(listItem);
+    });
+    document.getElementById("stop").style.display = "block";
+
+    document.getElementById("stop").addEventListener("click", function () {
+        listContainer.innerHTML = "";
+        document.getElementById("stop").style.display = "none";
+    });
+};
+let lijstKnopKleur = $("#colorList");
+lijstKnopKleur.on("click", displaySavedKeys);
 //neither versions
 
 // const v1 = document.getElementById("v1Choser");

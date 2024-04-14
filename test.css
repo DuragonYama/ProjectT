@@ -119,6 +119,8 @@ h1 {
 }
 .list {
     margin-left: 5px;
+    position: absolute;
+    top: 430px;
 }
 #stop {
     display: none;
@@ -205,4 +207,22 @@ h1 {
     width: 30px;
     position: absolute;
     left: 100px;
+}
+.dataBoxes {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 500px;
+    left: 180vh;
+}
+#kleurLoadKnop {
+    position: relative;
+    left: 6px;
+}
+#notiBlok {
+    position: absolute;
+    top: 400px;
+    /* left: 100px; */
+    width: 5px;
+    height: 5px;
 }
