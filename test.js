@@ -707,9 +707,9 @@ function getSavedKey() {
     }
     return keys;
 };
+const listContainer = document.getElementById("savedKeyL");
 function displaySavedKeys() {
     const savedKeys = getSavedKey();
-    const listContainer = document.getElementById("savedKeyL");
 
     listContainer.innerHTML = "";
 
@@ -717,14 +717,55 @@ function displaySavedKeys() {
         const listItem = document.createElement("li");
         listItem.textContent = e;
         listContainer.appendChild(listItem);
+
+        listItem.addEventListener("click", function() {
+            let loadNaam = this.textContent;
+            loadKleurForDisplaySavedKeys(loadNaam);
+        });
     });
+
     document.getElementById("stop").style.display = "block";
 
     document.getElementById("stop").addEventListener("click", function () {
         listContainer.innerHTML = "";
         document.getElementById("stop").style.display = "none";
     });
-};
+
+    function loadKleurForDisplaySavedKeys(name) {
+        let savedKleur = localStorage.getItem(name);
+
+        if (savedKleur) {
+            let progressKleur = JSON.parse(savedKleur);
+
+            $(".v2Box").empty();
+            $("#notiBlok").empty();
+
+            $("#notiBlok").text(progressKleur.textBlok);
+
+            for (let i = 0; i < progressKleur.miniBoxContainerv2Count + progressKleur.miniBoxContainerv1Count; i++) {
+                if (i % 2 == 0) {
+                    $(".v2Box").append('<div class="miniBoxContainerv1"></div>');
+                } else {
+                    $(".v2Box").append('<div class="miniBoxContainerv2"></div>');
+                }
+            }
+
+            let dataIndex = 0;
+            $(".v2Box .miniBoxContainerv1, .v2Box .miniBoxContainerv2").each(function() {
+                let miniBoxCount = progressKleur.miniBoxesData[dataIndex];
+                dataIndex++;
+
+                for (let i = 0; i < miniBoxCount; i++) {
+                    $(this).append('<div class="miniBox"></div>');
+                    $(this).find('.miniBox').eq(i).css("backgroundColor", progressKleur.miniBoxesData[dataIndex]);
+                    dataIndex++;
+                }
+            });
+        } else {
+            alert("Dit bestaat niet");
+        }
+    }
+}
 let lijstKnopKleur = $("#colorList");
 lijstKnopKleur.on("click", displaySavedKeys);
 //neither versions

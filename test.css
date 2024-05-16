@@ -226,3 +226,7 @@ h1 {
     width: 5px;
     height: 5px;
 }
+li:hover {
+    cursor: pointer;
+    color: blue;
+}
