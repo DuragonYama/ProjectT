@@ -768,6 +768,23 @@ function displaySavedKeys() {
 }
 let lijstKnopKleur = $("#colorList");
 lijstKnopKleur.on("click", displaySavedKeys);
+
+const LeftToRightKnop = document.querySelector(".LeftToRight");
+const RightToLeftKnop = document.querySelector(".RightToLeft");
+
+let dynamicStyle = document.createElement("style");
+document.head.appendChild(dynamicStyle);
+
+function LeftToRight() {
+    dynamicStyle.innerHTML = `.miniBoxContainerv2 { left: 5px !important; transition: left 0.5s ease; }`;
+}
+
+function RightToLeft() {
+    dynamicStyle.innerHTML = `.miniBoxContainerv2 { left: 0px !important; transition: left 0.5s ease; }`;
+}
+
+LeftToRightKnop.addEventListener("click", LeftToRight);
+RightToLeftKnop.addEventListener("click", RightToLeft);
 //neither versions
 
 // const v1 = document.getElementById("v1Choser");
