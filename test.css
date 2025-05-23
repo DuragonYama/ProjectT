@@ -243,3 +243,6 @@ li:hover {
     cursor: pointer;
     color: blue;
 }
+button:hover {
+    cursor: pointer;
+}

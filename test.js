@@ -1,13 +1,13 @@
-// const knop = document.getElementById("knop");
-// const knop2 = document.getElementById("knop2");
-// const knop3 = document.getElementById("knop3");
-// const knop4 = document.getElementById("knop4");
-// const ss = document.getElementById("ss");
-// const arti = document.getElementById("arti");
-// const eksi = document.getElementById("eksi");
-// const imageContainer = document.querySelector("#imageInput2");
-// const afbV = document.getElementById("afbV");
-// var uploaded_image = "";
+const knop = document.getElementById("knop");
+const knop2 = document.getElementById("knop2");
+const knop3 = document.getElementById("knop3");
+const knop4 = document.getElementById("knop4");
+const ss = document.getElementById("ss");
+const arti = document.getElementById("arti");
+const eksi = document.getElementById("eksi");
+const imageContainer = document.querySelector("#imageInput2");
+const afbV = document.getElementById("afbV");
+var uploaded_image = "";
 
 // knop.onclick = function () {
 //     let widthValue = document.getElementById("width").value;
